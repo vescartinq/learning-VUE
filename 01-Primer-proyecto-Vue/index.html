@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primer proyecto con Vue 3!</title>
+    <!-- BOOTSTRAP -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <!-- CDN vue 3 -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Impresión en pantalla -->
+      <h1>Hello Vue 3!</h1>
+
+      <h2>IMPRIMIR EN PANTALLA</h2>
+      <h2>Nombre de usuario: {{nombre}}</h2>
+      <h2>Edad: {{edad}} años</h2>
+
+      <hr />
+
+      <!-- V_BIND - ENLACES -->
+      <h2>V-BIND</h2>
+      <!-- enlaces se hacen con v-bind: delante de href, o difectamente :href -->
+      <a v-bind:href="google">Ir al enlace de Google</a>
+      <br />
+      <a :href="google">Ir al enlace de Google con abreviatura</a>
+
+      <hr />
+
+      <!-- V_IF BOOLEANOS -->
+      <h2>V-IF</h2>
+      <h2 v-if="estado">Cuenta activada porque estado en true</h2>
+      <h2 v-else>Cuenta Desactivada porque estado en false</h2>
+
+      <hr />
+      <h2>V-ELSE-IF</h2>
+      <h2 v-if="cantidad > 100">Cantidad: {{cantidad}}</h2>
+      <h2 v-else-if="cantidad <= 100 && cantidad > 0">
+        Cantidad: <span style="color: red">{{cantidad}}</span>
+      </h2>
+      <h2 v-else>Sin cantidad: {{cantidad}}</h2>
+
+      <hr />
+
+      <!-- V-FOR -->
+      <h2>V-FOR</h2>
+      <h2>Mis servicios disponibles:</h2>
+      <ul>
+        <li v-for="(item, index) in servicios" :key="index">
+          {{index + 1}} - {{item}}
+        </li>
+      </ul>
+
+      <hr />
+
+      <!-- V-ON -->
+      <h2>V-ON</h2>
+      <button v-on:click="agregarSaldo">Agregar Saldo</button>
+      <br />
+      <button @click="restarSaldo">Restar Saldo abreviado</button>
+
+      <hr />
+
+      <!-- DESHABILITAR BOTON-->
+      <h2>CLASE ESTÁTICA</h2>
+      <h2>Desactivar botón con saldo a Cero</h2>
+      <br />
+      <h2>Cantidad: {{cantidad}}</h2>
+      <button v-on:click="disminuirSaldo" :disabled="desactivar">
+        Disminuir/Desactivar Saldo
+      </button>
+
+      <hr />
+
+      <!-- CLASE DINÁMICA -->
+      <!-- Operador ternario -->
+      <h2>CLASE DINÁMICA</h2>
+      <h2
+        class="bg-dark"
+        :class="[cantidad > 100 ? 'text-success' : 'text-danger']"
+        :style="{'font-size': '50px'}"
+      >
+        Cantidad: {{cantidad}}
+      </h2>
+
+      <hr />
+
+      <!-- PROPIEDADES COMPUTADAS -->
+      <!-- colorCantidad y mayusculasTexto -->
+      <h2>PROPIEDADES COMPUTADAS</h2>
+      <h1>{{ mayusculasTexto }}</h1>
+      <h2 class="bg-dark" :class="colorCantidad">
+        Mi saldo diponible es: {{ cantidad }}
+      </h2>
+      <a v-bind:href="enlace">ir al enlace</a>
+      <br />
+      <a :href="enlace">ir al enlace</a>
+
+      <hr />
+
+      <!-- FOOTER -->
+      <!-- :valor (lo capturamos de props/componente)->BIND-> cantidad(main.js) /// fecha-banco(componente)-->
+      <footer-banco :valor="cantidad" fecha-banco="septiembre 2020" />
+
+      <!-- FIN APP -->
+    </div>
+    <script src="main.js"></script>
+    <script src="components/Footer.js"></script>
+    <script>
+      const mountedApp = app.mount('#app');
+    </script>
+  </body>
+</html>
