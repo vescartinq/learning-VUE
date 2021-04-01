@@ -11,8 +11,8 @@ export default {
 };
 </script>
 
-<!-- Scope-> estilos solo en este componente -->
-<style scope>
+<!-- Scoped-> estilos solo en este componente -->
+<style scoped>
 h1 {
   color: peru;
 }
