@@ -7,9 +7,15 @@
       {{ index + 1 }} - {{ servicio }}
     </div>
 
-    <AccionSaldo texto="Aumentar Saldo" />
     <br />
-    <AccionSaldo texto="Disminuir Saldo" />
+
+    <AccionSaldo texto="Aumentar Saldo" @accion="aumentarSaldo" />
+    <br />
+    <AccionSaldo
+      texto="Disminuir Saldo"
+      @accion="disminuirSaldo"
+      :desactivar="desactivar"
+    />
   </div>
 </template>
 
@@ -26,13 +32,20 @@ export default {
       cuenta: 'Visa',
       estado: false,
       servicios: ['giro', 'abono', 'transferencia'],
+      desactivar: false,
     };
   },
   methods: {
-    aumentar() {
+    aumentarSaldo() {
       this.saldo = this.saldo + 100;
+      this.desactivar = false;
     },
-    diminuir() {
+    disminuirSaldo() {
+      if (this.saldo === 0) {
+        this.desactivar = true;
+        alert('llegaste al final');
+        return;
+      }
       this.saldo = this.saldo - 100;
     },
   },
