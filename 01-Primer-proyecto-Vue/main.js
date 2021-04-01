@@ -26,12 +26,13 @@ const app = Vue.createApp({
       this.cantidad = this.cantidad - 100;
     },
   },
+  // Propiedades computadas-> Siempre retornan una información
   computed: {
     colorCantidad() {
       return this.cantidad > 500 ? 'text-success' : 'text-danger';
     },
     mayusculasTexto() {
-      return this.titulo.toUpperCase();
+      return this.nombre.toUpperCase();
     },
   },
 });

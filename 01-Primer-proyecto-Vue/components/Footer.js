@@ -13,6 +13,7 @@ app.component('footer-banco', {
   data() {
     return {
       texto: 'Footer de mi sitio web dinamico',
+      // cantidad: 1000,  // lo podemos pasar como estático o dinámico (props)
     };
   },
 });

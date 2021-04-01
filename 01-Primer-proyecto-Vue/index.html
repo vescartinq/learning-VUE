@@ -92,7 +92,21 @@
 
       <hr />
 
+      <!-- PROPIEDADES COMPUTADAS -->
+      <!-- colorCantidad y mayusculasTexto -->
+      <h2>PROPIEDADES COMPUTADAS</h2>
+      <h1>{{ mayusculasTexto }}</h1>
+      <h2 class="bg-dark" :class="colorCantidad">
+        Mi saldo diponible es: {{ cantidad }}
+      </h2>
+      <a v-bind:href="enlace">ir al enlace</a>
+      <br />
+      <a :href="enlace">ir al enlace</a>
+
+      <hr />
+
       <!-- FOOTER -->
+      <!-- :valor (lo capturamos de props/componente)->BIND-> cantidad(main.js) /// fecha-banco(componente)-->
       <footer-banco :valor="cantidad" fecha-banco="septiembre 2020" />
 
       <!-- FIN APP -->
