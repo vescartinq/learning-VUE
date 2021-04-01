@@ -11,4 +11,9 @@ export default {
 };
 </script>
 
-<style></style>
+<!-- Scope-> estilos solo en este componente -->
+<style scope>
+h1 {
+  color: peru;
+}
+</style>
