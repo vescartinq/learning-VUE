@@ -23,5 +23,6 @@ https://bluuweb.github.io/vue-udemy/
 
 - PaisesApp (10)-             https://top-paises.netlify.app/
 - TodoApp-provide-inject(11)- https://todo-vue-provide.netlify.app/
+- CRUD-auth-db-error(14)-     https://bluuweb-crud-auth-errors.netlify.app/acceso
 
 ## 3. TEMARIO
