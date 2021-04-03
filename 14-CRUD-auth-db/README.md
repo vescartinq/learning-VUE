@@ -1,4 +1,4 @@
-# 13-crud-auth
+# auth-2020-2
 
 ## Project setup
 ```
