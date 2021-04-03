@@ -2,8 +2,13 @@
   <div>
     <h1>Agregar</h1>
     <form @submit.prevent="agregarTarea(nombre)">
-      <input type="text" v-model="nombre" />
-      <button type="submit">Agregar</button>
+      <input
+        type="text"
+        v-model="nombre"
+        class="form-control mb-2"
+        placeholder="Ingresar tarea"
+      />
+      <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
   </div>
 </template>
