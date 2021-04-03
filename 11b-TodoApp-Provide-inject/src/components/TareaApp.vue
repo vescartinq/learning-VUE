@@ -15,19 +15,24 @@
 
 <script>
 import { provide, ref, watchEffect } from 'vue';
+
 import TareaForm from './TareaForm.vue';
 import TareaItem from './TareaItem.vue';
+
 export default {
   components: { TareaForm, TareaItem },
   setup() {
+    // Para poder ir modificandolo desde todos los componentes
     const tareas = ref([]);
 
+    // COMPO PRINCIPAL-> Recibe la info para derivarla a hijos
     provide('tareas', tareas);
 
     if (localStorage.getItem('tareas')) {
       tareas.value = JSON.parse(localStorage.getItem('tareas'));
     }
 
+    // useEffect en VUE
     watchEffect(() => {
       localStorage.setItem('tareas', JSON.stringify(tareas.value));
     });

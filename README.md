@@ -21,6 +21,7 @@ https://bluuweb.github.io/vue-udemy/
 
 ## 2. APPS DEMOSTRACION
 
-PaisesApp (10)- https://top-paises.netlify.app/
+- PaisesApp (10)- https://top-paises.netlify.app/
+- TodoApp-provide-inject(11)- https://todo-vue-provide.netlify.app/
 
 ## 3. TEMARIO
